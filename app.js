@@ -15,10 +15,15 @@ const app = express();
 app.use(express.json());
 
 app.use("/home", (req, res) => {
-  res.status(200).json({
-    status: "Success",
-    data: { message: `Hello World From Our Server` },
-  });
+  // res.status(200).json({
+  //   status: "Success",
+  //   data: { message: `Hello World From Our Server` },
+  // });
+  res.status(200).send(`
+    <center>
+      <h1 style="color: dodgerblue; font-family: Arial, sans-serif;">Hello World From Our Server</h1>
+    </center>
+    `);
 });
 
 app.use("/api/v1/products", productsRouter);
